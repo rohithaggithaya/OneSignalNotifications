@@ -47,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
             NotificationBank nb = new NotificationBank();
             String title = notification.payload.title;
             String body = notification.payload.body;
-            nb.addNewNotification(getApplicationContext(), title, body);
+            String url = notification.payload.launchURL;
+            nb.addNewNotification(getApplicationContext(), title, body,url);
         }
     }
 }
