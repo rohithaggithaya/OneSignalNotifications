@@ -49,7 +49,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!url.isEmpty())
+                if (url!=null && !url.isEmpty())
                     try {
                         Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                         mContext.startActivity(myIntent);

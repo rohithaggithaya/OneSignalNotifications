@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "notifications.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -19,7 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 NotificationsContract.NotificationsEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 NotificationsContract.NotificationsEntry.COLUMN_TITLE + " TEXT, " +
                 NotificationsContract.NotificationsEntry.COLUMN_BODY + " TEXT, " +
-                NotificationsContract.NotificationsEntry.COLUMN_URL + "TEXT," +
+                NotificationsContract.NotificationsEntry.COLUMN_URL + " TEXT," +
                 NotificationsContract.NotificationsEntry.COLUMN_TIMESTAMP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
                 "); ";
         db.execSQL(SQL_CREATE_WAITLIST_TABLE);

@@ -3,10 +3,13 @@ package com.example.raggitha.onesignalnotifications;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.onesignal.NotificationExtenderService;
 import com.onesignal.OSNotification;
+import com.onesignal.OSNotificationReceivedResult;
 import com.onesignal.OneSignal;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 /*NotificationBank  nb = new NotificationBank();
                 String title = "New Title - 1";
                 String body = "New Message - 1";
-                nb.addNewNotification(getApplicationContext(), title,body);*/
+                nb.addNewNotification(getApplicationContext(), title,body,"https://www.google.com");*/
                 startActivity(new Intent(MainActivity.this, NotificationBank.class));
                 //finish();
             }

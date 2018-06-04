@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.util.Log;
 
 import com.example.raggitha.onesignalnotifications.Data.DatabaseHelper;
 import com.example.raggitha.onesignalnotifications.Data.NotificationsContract;
@@ -16,6 +17,8 @@ import com.example.raggitha.onesignalnotifications.Data.NotificationsContract;
 public class NotificationBank extends AppCompatActivity {
     private RecyclerViewAdapter mAdapter;
     private SQLiteDatabase mDb;
+
+    private static final String TAG = "NotificationBank";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,10 @@ public class NotificationBank extends AppCompatActivity {
 
 
     public long addNewNotification(Context context, String title, String body, String url) {
+        Log.e(TAG,"Adding new notification: " +
+                "title: " + title +
+                "body: " + body +
+                "Url: " + url);
         DatabaseHelper dbHelp = new DatabaseHelper(context);
         SQLiteDatabase database = dbHelp.getWritableDatabase();
         ContentValues cv = new ContentValues();
